@@ -1,4 +1,4 @@
-package com.geektech.taskapp36;
+package com.geektech.taskapp36.ui.fragments.profileFragment;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -34,10 +34,10 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getImage = registerForActivityResult(new ActivityResultContracts.GetContent(), result -> {
-            binding.profileImage.setImageURI(result);
-        });
 
-        binding.profileButton.setOnClickListener(v -> getImage.launch("image/*"));
+        getImage = registerForActivityResult(new ActivityResultContracts.GetContent(), result -> {
+            binding.profileImage.setImageURI(result);    //Замена ActivityResult
+        });
+        binding.profileImage.setOnClickListener(v -> getImage.launch("image/*"));
     }
 }

@@ -1,4 +1,4 @@
-package com.geektech.taskapp36;
+package com.geektech.taskapp36.ui.fragments.taskFragment;
 
 import android.os.Bundle;
 
@@ -14,13 +14,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.geektech.taskapp36.R;
 import com.geektech.taskapp36.models.Task;
 
 public class TaskFragment extends Fragment {
 
-private EditText editText;
-private Button button;
-private Task task;
+    private EditText editText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,24 +31,26 @@ private Task task;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         editText = view.findViewById(R.id.taskEditText);
-        view.findViewById(R.id.taskButton).setOnClickListener(v ->{
 
+
+        view.findViewById(R.id.taskButton).setOnClickListener(v -> {
             save();
+            close();
         });
     }
 
 
     private void save() {
         String text = editText.getText().toString().trim();
-        Task task = new Task(text , System.currentTimeMillis());
+        Task task = new Task(text, System.currentTimeMillis());
         Bundle bundle = new Bundle();
-        bundle.putSerializable("task" , task );
-        getParentFragmentManager().setFragmentResult("rk_task" , bundle);
-        close();
+        bundle.putSerializable("task", task);
+        getParentFragmentManager().setFragmentResult("rk_task", bundle);
     }
 
-    private void close() {
+    private void close() {     //Выход из TaskFragment
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
         navController.navigateUp();
+
     }
 }

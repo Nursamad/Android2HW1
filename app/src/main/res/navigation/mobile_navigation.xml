@@ -7,29 +7,34 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.geektech.taskapp36.ui.home.HomeFragment"
+        android:name="com.geektech.taskapp36.ui.fragments.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.geektech.taskapp36.ui.dashboard.DashboardFragment"
+        android:name="com.geektech.taskapp36.ui.fragments.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.geektech.taskapp36.ui.notifications.NotificationsFragment"
+        android:name="com.geektech.taskapp36.ui.fragments.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/taskFragment"
-        android:name="com.geektech.taskapp36.TaskFragment"
+        android:name="com.geektech.taskapp36.ui.fragments.taskFragment.TaskFragment"
         android:label="fragment_task"
         tools:layout="@layout/fragment_task" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.geektech.taskapp36.ProfileFragment"
+        android:name="com.geektech.taskapp36.ui.fragments.profileFragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.geektech.taskapp36.ui.onboard.BoardFragment"
+        android:label="fragment_board"
+        tools:layout="@layout/fragment_board" />
 </navigation>
