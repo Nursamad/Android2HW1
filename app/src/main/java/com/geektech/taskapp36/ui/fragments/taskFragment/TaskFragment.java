@@ -32,6 +32,10 @@ public class TaskFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         editText = view.findViewById(R.id.taskEditText);
 
+        // для редактирования  , получаем данные по ключю из HomeFragment
+        if (getArguments() != null) {
+            editText.setText(getArguments().getString("title"));
+        }
 
         view.findViewById(R.id.taskButton).setOnClickListener(v -> {
             save();

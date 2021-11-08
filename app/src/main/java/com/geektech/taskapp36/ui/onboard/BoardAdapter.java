@@ -16,7 +16,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     private ItemBoardBinding binding;
     private final String[] titles = new String[]{"Welcome!", "Our teacher", "Geektech"};
     private final String[] description = new String[]{"Android 2", "Daniyar", "IT school"};
-    private final int[] img = new int[]{R.drawable.ic_android, R.drawable.ic_boardimagetwo, R.drawable.ic_geek};
+    private final int[] img = new int[]{R.raw.lottie, R.raw.lottie2, R.raw.lottie3};
 
 
     @NonNull
@@ -33,9 +33,9 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.onBind(position);
-        if (position == 2){
+        if (position == 2) {
             binding.boardBtn.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             binding.boardBtn.setVisibility(View.INVISIBLE);
         }
     }
@@ -46,12 +46,12 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-/*
-        private TextView textTitle;
-        private TextView desc;
-        private ImageView imgs;
-        private Button btn;
-*/
+        /*
+                private TextView textTitle;
+                private TextView desc;
+                private ImageView imgs;
+                private Button btn;
+        */
         public ViewHolder(@NonNull ItemBoardBinding itemView) {
             super(itemView.getRoot());
 /*
@@ -67,9 +67,9 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
         }
 
         public void onBind(int position) {
+            binding.itemBoardIv.setAnimation(img[position]);
             binding.itemBoardTv.setText(titles[position]);
             binding.itemBoardDes.setText(description[position]);
-            binding.itemBoardIv.setImageResource(img[position]);
         }
     }
 }

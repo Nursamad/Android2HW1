@@ -5,13 +5,13 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:id="@+id/backProf"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.profileFragment.ProfileFragment">
 
     <ImageView
         android:id="@+id/profileImage"
         android:layout_width="300dp"
-        android:background="@drawable/custom_input"
         android:layout_height="300dp"
          />
 

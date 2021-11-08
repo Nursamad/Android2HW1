@@ -3,15 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
     android:orientation="vertical">
 
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/itemBoardIv"
         android:layout_width="250dp"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
         android:layout_height="250dp"
-        android:src="@drawable/ic_boardimage" />
+        tools:src="@drawable/ic_boardimage" />
 
     <TextView
         android:id="@+id/itemBoardTv"
@@ -43,7 +46,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        style="@style/ButtonStyle"
         android:layout_gravity="end"
         android:text="Finish"
         android:textColor="@color/white"

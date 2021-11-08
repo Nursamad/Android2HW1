@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +22,9 @@ import com.geektech.taskapp36.models.Task;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private boolean isChanged = false;
     private TaskAdapter adapter;
+    private int pos;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,6 +34,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(int position) {
 
+
+                //обновление элемента
+                isChanged = true;
+
+                pos = position;
+                Task task = adapter.getItem(position);
+                openFragment(task.getText());
             }
 
             @Override
@@ -50,14 +60,24 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.homeFab.setOnClickListener(v -> {
-            openFragment();
+            openFragment(null);
+
+            // добавление нового элемента
+            isChanged = false;
+
         });
         getParentFragmentManager().setFragmentResultListener("rk_task", getViewLifecycleOwner(), new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 Task task = (Task) result.getSerializable("task");
-                Log.e("Home", "result = " + task.getText());
-                adapter.addItem(task);
+
+                //обновление элемента
+                if (isChanged) {
+                    adapter.updateItem(task, pos);
+                } else {
+                    // добавление нового элемента
+                    adapter.addItem(task);
+                }
             }
         });
         initList();
@@ -68,8 +88,13 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void openFragment() {
+    private void openFragment(String title) {
+
+        // передаем данные по ключю в TaskFragment
+        Bundle bundle = new Bundle();
+        bundle.putString("title", title);
+
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
-        navController.navigate(R.id.taskFragment);
+        navController.navigate(R.id.taskFragment, bundle);
     }
 }
