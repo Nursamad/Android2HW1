@@ -17,6 +17,7 @@ import com.geektech.taskapp36.interfaces.OnItemClickListener;
 import com.geektech.taskapp36.models.Task;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
@@ -74,6 +75,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     public void updateItem(Task task, int pos) {
         list.set(pos , task);
         notifyItemChanged(pos);
+    }
+
+    public void addItems(List<Task> tasks) {
+        list.addAll(tasks);
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

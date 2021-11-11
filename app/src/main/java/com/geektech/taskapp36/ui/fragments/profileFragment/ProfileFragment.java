@@ -58,13 +58,14 @@ public class ProfileFragment extends Fragment {
             }
             @Override
             public void afterTextChanged(Editable editable) {
-            prefs.saveEdt(binding.profileEditText.getText().toString());  //добавить текст в dit text
+            prefs.saveEdt(binding.profileEditText.getText().toString());  //добавить текст в edit text
             }
         });
 
+        //Замена ActivityResult
         getImage = registerForActivityResult(new ActivityResultContracts.GetContent(), result -> {
+
             prefs.saveImage(result.toString());//приведение uri в стринг
-            //Замена ActivityResult
         });
         binding.profileImage.setOnClickListener(v -> getImage.launch("image/*"));
 

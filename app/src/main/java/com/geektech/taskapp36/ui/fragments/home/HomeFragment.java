@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.App;
 import com.geektech.taskapp36.R;
 import com.geektech.taskapp36.databinding.FragmentHomeBinding;
 import com.geektech.taskapp36.interfaces.OnItemClickListener;
@@ -30,6 +31,9 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adapter = new TaskAdapter();
+
+        adapter.addItems(App.getInstance().getDataBase().taskDao().getAll());
+
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onClick(int position) {
@@ -74,9 +78,11 @@ public class HomeFragment extends Fragment {
                 //обновление элемента
                 if (isChanged) {
                     adapter.updateItem(task, pos);
+                    App.getInstance().getDataBase().taskDao().update(task);
                 } else {
                     // добавление нового элемента
                     adapter.addItem(task);
+                    App.getInstance().getDataBase().taskDao().insert(task);
                 }
             }
         });
