@@ -12,12 +12,15 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/fragment_board.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/fragment_task.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/item_board.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/layout/item_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/menu/option_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TaskApp36/app/src/main/res/menu/sign_out_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

@@ -4,19 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.dashboard.DashboardFragment">
+    tools:context="com.geektech.taskapp36.kg.geektech.taskapp36.ui.fragments.dashboard.DashboardFragment">
 
     <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:text="No internet"
+        android:textSize="24sp"
+        android:id="@+id/tvInet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dashRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_list" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

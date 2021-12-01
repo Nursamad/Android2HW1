@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/backProf"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.profileFragment.ProfileFragment">
+    tools:context="com.geektech.taskapp36.kg.geektech.taskapp36.ui.fragments.profileFragment.ProfileFragment">
 
     <ImageView
         android:id="@+id/profileImage"
@@ -30,5 +30,6 @@
         android:hint="@string/name" />
 
 </com.google.android.material.textfield.TextInputLayout>
+
 
 </LinearLayout>
